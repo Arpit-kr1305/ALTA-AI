@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeployMate DevOps RAG</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Week 4 Project</p>
+        <h1>DeployMate DevOps RAG</h1>
+      </div>
+      <div class="status" id="status">Checking API...</div>
+    </header>
+
+    <main class="layout">
+      <section class="panel ask-panel">
+        <div class="section-title">
+          <p class="eyebrow">Ask the runbook</p>
+          <h2>Deployment Troubleshooter</h2>
+        </div>
+        <textarea id="question" rows="5" placeholder="Example: My app works on localhost but not on AWS public IP. What should I check?"></textarea>
+        <div class="actions">
+          <button id="askBtn">Ask DeployMate</button>
+          <button id="reindexBtn" class="secondary">Re-index Runbook</button>
+        </div>
+        <div class="samples" id="samples"></div>
+      </section>
+
+      <section class="panel answer-panel">
+        <div class="section-title">
+          <p class="eyebrow">Grounded answer</p>
+          <h2>AI Response</h2>
+        </div>
+        <pre id="answer">Ask a DevOps question to see a RAG answer with source citations.</pre>
+      </section>
+
+      <section class="panel sources-panel">
+        <div class="section-title">
+          <p class="eyebrow">Retrieved context</p>
+          <h2>Sources Used</h2>
+        </div>
+        <div id="sources" class="sources-empty">Sources will appear here after retrieval.</div>
+      </section>
+
+      <section class="panel flow-panel">
+        <div class="section-title">
+          <p class="eyebrow">How it works</p>
+          <h2>RAG + DevOps Flow</h2>
+        </div>
+        <ol class="flow">
+          <li>DevOps runbook is loaded from JSON.</li>
+          <li>Runbook entries are converted into embeddings.</li>
+          <li>User question is embedded and matched with relevant entries.</li>
+          <li>AI generates an answer only from retrieved sources.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ci-cd-basics",
+    "title": "CI/CD pipeline basics",
+    "category": "CI/CD",
+    "text": "A CI/CD pipeline automates the path from code change to deployment. A simple pipeline has checkout, install dependencies, run tests, build the app, package the app, and deploy to a server. GitHub Actions, Travis CI, and CircleCI are common CI/CD tools. The most important rule is to stop the deployment if tests or builds fail."
+  },
+  {
+    "id": "github-actions-node",
+    "title": "GitHub Actions workflow for Node.js",
+    "category": "GitHub Actions",
+    "text": "For a Node.js app, a GitHub Actions workflow should run on push and pull_request. It should use actions/checkout, setup-node, npm ci or npm install, npm test, and optionally docker build. Secrets such as server passwords, API keys, and tokens should be stored in GitHub Secrets, not inside code."
+  },
+  {
+    "id": "docker-container",
+    "title": "Docker container deployment checklist",
+    "category": "Docker",
+    "text": "Docker packages an application with its runtime so it runs consistently on another machine. A good Dockerfile copies package files first, installs dependencies, copies source code, exposes the application port, and defines a CMD. Before deployment, verify image build, container start, port mapping, environment variables, logs, and health endpoint."
+  },
+  {
+    "id": "aws-ec2-deploy",
+    "title": "Deploying a web app on AWS EC2",
+    "category": "AWS",
+    "text": "A basic AWS EC2 deployment requires launching an instance, opening the required inbound port in the security group, installing runtime dependencies, copying or pulling the app code, setting environment variables, running the app with a process manager or Docker, and testing the public IP address in a browser."
+  },
+  {
+    "id": "dns-domain",
+    "title": "DNS and domain setup",
+    "category": "DNS",
+    "text": "A domain provider such as GoDaddy, Namecheap, or Google Domains maps a human-readable domain name to a server IP address. Use an A record to point a root domain to an IPv4 address and a CNAME record to point a subdomain to another hostname. DNS changes may take time to propagate."
+  },
+  {
+    "id": "local-to-public",
+    "title": "Moving from localhost to public access",
+    "category": "Deployment",
+    "text": "An app that works on localhost may fail publicly because of port, firewall, environment variable, or host binding issues. Check that the app listens on 0.0.0.0, the correct port is exposed, the cloud firewall allows traffic, and the public URL points to the right server."
+  },
+  {
+    "id": "env-secrets",
+    "title": "Environment variables and secrets",
+    "category": "Security",
+    "text": "Environment variables are used to configure apps without changing code. Secrets such as API keys, database passwords, SSH keys, and tokens must not be committed to GitHub. In production, store them in GitHub Secrets, cloud secret managers, or server environment configuration."
+  },
+  {
+    "id": "deployment-debugging",
+    "title": "Deployment debugging order",
+    "category": "Troubleshooting",
+    "text": "When deployment fails, debug in order: check CI logs, check build output, check environment variables, check server logs, check container status, check port mapping, check firewall rules, check DNS records, and finally test the health endpoint. Changing many things at once makes debugging harder."
+  },
+  {
+    "id": "health-check",
+    "title": "Health check endpoint",
+    "category": "Monitoring",
+    "text": "A health check endpoint helps confirm that a deployed service is alive. It should return a simple JSON response such as status ok, version, and uptime. CI/CD and cloud platforms can call the health endpoint after deployment to verify the release."
+  },
+  {
+    "id": "rag-devops-purpose",
+    "title": "Why RAG helps DevOps learning",
+    "category": "RAG",
+    "text": "RAG is useful for DevOps because deployment steps are procedural and source-specific. A RAG assistant can retrieve the exact runbook step for Docker, GitHub Actions, AWS, DNS, or debugging, then generate a concise answer grounded in the retrieved runbook instead of giving generic advice."
+  }
+]
