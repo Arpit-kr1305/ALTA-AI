@@ -1,0 +1,21 @@
+{
+  "name": "fellowship-memory-mentor-rag",
+  "version": "1.0.0",
+  "description": "A personal fellowship memory mentor powered by RAG, OpenAI, and Chroma.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "ingest": "node scripts/ingest.js",
+    "test": "node test/rag.test.js"
+  },
+  "keywords": [
+    "rag",
+    "openai",
+    "chroma",
+    "vector-database",
+    "fellowship"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "rubric-week3",
+    "title": "Week 3 RAG assignment requirements",
+    "type": "rubric",
+    "date": "2026-05-02",
+    "text": "The Week 3 assignment requires a mini project using Retrieval Augmented Generation. The system must retrieve relevant data first and then generate answers using AI. It must use an API such as OpenAI or Gemini, must use a vector database such as FAISS or Chroma, and should answer based on the provided data instead of general AI knowledge. The submission should include a problem statement, tools and technologies used, a brief explanation of the RAG workflow, sample inputs and outputs, and the code as a GitHub repository or zip file."
+  },
+  {
+    "id": "session-rag-core",
+    "title": "RAG session notes: retrieval before generation",
+    "type": "session-note",
+    "date": "2026-04-30",
+    "text": "RAG stands for Retrieval Augmented Generation. The important idea is that the AI answer should be grounded in retrieved context. First, documents are split into chunks. Second, each chunk is converted into embeddings. Third, embeddings are stored in a vector database. Fourth, a user question is embedded and matched with similar chunks. Finally, the LLM receives only the retrieved context and the question, then generates an answer with source references."
+  },
+  {
+    "id": "session-vector-db",
+    "title": "Vector database takeaways",
+    "type": "session-note",
+    "date": "2026-04-30",
+    "text": "A vector database stores embeddings and searches by semantic similarity, not only keyword matching. Chroma is useful for small RAG projects because it can run locally, store documents with metadata, and return the most similar chunks for a query. The collection is the main storage unit. Each record should have an id, document text, embedding, and useful metadata such as title, type, and date."
+  },
+  {
+    "id": "mentor-feedback-uniqueness",
+    "title": "Mentor feedback on standing out",
+    "type": "mentor-feedback",
+    "date": "2026-05-01",
+    "text": "For the Week 3 project, avoid a generic PDF chatbot. Make the project feel personal and useful. A strong submission should show why the data matters, cite the retrieved sources, and refuse to answer when the answer is not present in the data. The explanation should make the retrieval step visible so evaluators can see that it is not just a normal chatbot."
+  },
+  {
+    "id": "week2-project-log",
+    "title": "Week 2 AI Content Generator API project log",
+    "type": "project-log",
+    "date": "2026-05-02",
+    "text": "The Week 2 project was an AI Content Generator API System. The input was a topic. The flow was: send the topic to an AI model, generate a blog article, convert it into a LinkedIn post, and generate a summary. The output fields were blog, post, and summary. The implementation used a Node.js HTTP API with mock mode for local testing and OpenAI Responses API support for real generation."
+  },
+  {
+    "id": "personal-study-pattern",
+    "title": "Personal study pattern and constraints",
+    "type": "personal-note",
+    "date": "2026-05-01",
+    "text": "The student prefers projects that can be explained clearly in a demo and submitted as a zip. The student is comfortable with JavaScript and Node.js in the current workspace. A good project should avoid unnecessary frontend complexity and should have a simple API that can be tested with curl or Postman. The student wants the project to feel different from classmates' submissions."
+  },
+  {
+    "id": "demo-advice",
+    "title": "Demo advice for assignment submission",
+    "type": "mentor-feedback",
+    "date": "2026-05-01",
+    "text": "For a strong demo, show the retrieved source snippets along with the final answer. Use sample questions that prove the system is grounded in its own dataset. Ask one question that can be answered from the notes, and one question that cannot be answered, so the system can show a refusal instead of guessing. Never upload the .env file because it can contain an API key."
+  },
+  {
+    "id": "project-idea-memory-mentor",
+    "title": "Project idea: Fellowship Memory Mentor",
+    "type": "idea",
+    "date": "2026-05-02",
+    "text": "The Fellowship Memory Mentor is a RAG assistant that answers questions using a student's own fellowship memory bank. The memory bank can include session notes, project logs, mentor feedback, submission rubrics, and personal constraints. The assistant should act like a grounded mentor, not a general chatbot. It should cite sources and give practical next actions based only on the retrieved notes."
+  },
+  {
+    "id": "sample-answer-guideline",
+    "title": "Answer style guidelines",
+    "type": "system-design-note",
+    "date": "2026-05-02",
+    "text": "Answers should be short, specific, and source-grounded. When retrieved context is enough, the assistant should answer directly, list two to four practical next steps, and include citations like [S1] or [S2]. When the retrieved context is not enough, it should say that the memory bank does not contain enough information and suggest what note should be added."
+  },
+  {
+    "id": "technical-plan",
+    "title": "Technical plan for the RAG system",
+    "type": "system-design-note",
+    "date": "2026-05-02",
+    "text": "The system should use Node.js for the API, OpenAI for embeddings and answer generation, and Chroma as the vector database. The ingestion step reads memory cards from a JSON file, chunks each card, creates embeddings with the OpenAI embeddings endpoint, and stores the chunks in Chroma with metadata. The ask step embeds the user question, queries Chroma for top matching chunks, builds a context block, and sends the context plus question to the OpenAI Responses API."
+  }
+]
