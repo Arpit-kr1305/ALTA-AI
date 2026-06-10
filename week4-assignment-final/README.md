@@ -93,11 +93,10 @@ npm.cmd test
 
 Screenshots and demo assets are included in the `assets` folder:
 
-- `assets/sample_inputs_outputs_overview.png`
-- `assets/screenshot_01_aws_public_ip.png`
-- `assets/screenshot_02_github_actions.png`
-- `assets/screenshot_03_dns_domain.png`
-- `assets/deploymate_short_demo.avi`
+- sample_inputs_outputs_overview.png
+- screenshot_03_dns_domain.png
+- screenshot_02_github_actions.png
+- screenshot_01_aws_public_ip.png
 
 ## Submission
 
